@@ -23,39 +23,86 @@ package com.random_tests_java;
 
 public class Fibonacci {
 
-  public static void main(String[] args) {
-    if (args.length == 0 || Integer.valueOf(args[0]) < 0) {
-      System.out.println("ERROR");
-    } else if (args.length > 1 && "R".equals(args[1])) {
-      System.out.println(fibonacciRecursive(Integer.valueOf(args[0])));
-    } else {
-      System.out.println(fibonacciNonRecursive(Integer.valueOf(args[0])));
-    }
+	public static void main(String[] args) {
 
-  }
+		if (args.length == 0 || Long.valueOf(args[0]) < 0) {
+			System.out.println("ERROR");
+		} else if (args.length > 1 && "R".equals(args[1])) {
+			System.out.println(fibonacciRecursive(Long.valueOf(args[0])));
+		} else if (args.length > 1 && "M".equals(args[1])) {
+			System.out.println(fibonacciRecursiveMemo(Long.valueOf(args[0])));
+		} else {
+			System.out.println(fibonacciNonRecursive(Long.valueOf(args[0])));
+		}
 
-  private static Integer fibonacciRecursive(Integer n) {
-    if (n <= 1) {
-      return n;
-    }
-    return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
-  }
+	}
 
-  private static Integer fibonacciNonRecursive(Integer n) {
-    if (n <= 1) {
-      return n;
-    }
+	/**
+	 * Classic recursive method.
+	 * 
+	 * @param n input
+	 * @return n-th fibonacci number
+	 */
+	private static Long fibonacciRecursive(Long n) {
+		if (n <= 1) {
+			return n;
+		}
+		return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+	}
 
-    Integer n1 = 1; // (n - 1), initially f(1) = 1
-    Integer n2 = 0; // (n - 2), initially f(0) = 0
-    Integer p; // Pivot
-    for (int i = 0; i < n - 2; i++) {
-      p = n2; // Store the value of (n - 2) in the pivot
-      n2 = n1; // (n - 2) is the new (n - 1)
-      n1 = n1 + p; // the new (n - 1) is the sum of formers (n - 1) and (n - 2)
-    }
+	/**
+	 * Recursive method with memoization.
+	 * 
+	 * @param n input
+	 * @return n-th fibonacci number
+	 */
+	private static Long fibonacciRecursiveMemo(Long n) {
+		List<Long> memo = new ArrayList<Long>();
+		memo.add(0l); // Initializing memo with f(0)
+		memo.add(1l); // and f(1)
+		return fibonacciMemo(n, memo);
+	}
 
-    return n1 + n2;
-  }
+	/**
+	 * Recursive method with memoization.
+	 * 
+	 * @param n    input
+	 * @param memo List to store previous computations
+	 * @return n-th fibonacci number
+	 */
+	private static Long fibonacciMemo(Long n, List<Long> memo) {
+		if (n <= 1) {
+			return n;
+		} else if (memo.size() > n && memo.get(n.intValue()) != null) {
+			return memo.get(n.intValue());
+		}
+		Long result = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);
+		memo.add(result); // Adding f(n) to memo
+
+		return result;
+	}
+
+	/**
+	 * Non-recursive solution.
+	 * 
+	 * @param n input
+	 * @return n-th fibonacci number
+	 */
+	private static Long fibonacciNonRecursive(Long n) {
+		if (n <= 1) {
+			return n;
+		}
+
+		Long n1 = 1l; // (n - 1), initially f(1) = 1
+		Long n2 = 0l; // (n - 2), initially f(0) = 0
+		Long p; // Pivot
+		for (int i = 0; i < n - 2; i++) {
+			p = n2; // Store the value of (n - 2) in the pivot
+			n2 = n1; // (n - 2) is the new (n - 1)
+			n1 = n1 + p; // the new (n - 1) is the sum of formers (n - 1) and (n - 2)
+		}
+
+		return n1 + n2;
+	}
 
 }
