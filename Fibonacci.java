@@ -43,9 +43,9 @@ public class Fibonacci {
 	 * @param n input
 	 * @return n-th fibonacci number
 	 */
-	private static Long fibonacciRecursive(Long n) {
+	private static Long fibonacciRecursive(Integer n) {
 		if (n <= 1) {
-			return n;
+			return n.longValue();
 		}
 		return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
 	}
@@ -56,7 +56,7 @@ public class Fibonacci {
 	 * @param n input
 	 * @return n-th fibonacci number
 	 */
-	private static Long fibonacciRecursiveMemo(Long n) {
+	private static Long fibonacciRecursiveMemo(Integer n) {
 		List<Long> memo = new ArrayList<Long>();
 		memo.add(0l); // Initializing memo with f(0)
 		memo.add(1l); // and f(1)
@@ -70,11 +70,11 @@ public class Fibonacci {
 	 * @param memo List to store previous computations
 	 * @return n-th fibonacci number
 	 */
-	private static Long fibonacciMemo(Long n, List<Long> memo) {
+	private static Long fibonacciMemo(Integer n, List<Long> memo) {
 		if (n <= 1) {
-			return n;
-		} else if (memo.size() > n && memo.get(n.intValue()) != null) {
-			return memo.get(n.intValue());
+			return n.longValue();
+		} else if (memo.size() > n && memo.get(n) != null) {
+			return memo.get(n);
 		}
 		Long result = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);
 		memo.add(result); // Adding f(n) to memo
@@ -88,9 +88,9 @@ public class Fibonacci {
 	 * @param n input
 	 * @return n-th fibonacci number
 	 */
-	private static Long fibonacciNonRecursive(Long n) {
+	private static Long fibonacciNonRecursive(Integer n) {
 		if (n <= 1) {
-			return n;
+			return n.longValue();
 		}
 
 		Long n1 = 1l; // (n - 1), initially f(1) = 1
