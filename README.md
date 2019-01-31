@@ -8,6 +8,5 @@ Repositories for tests solved using other languages are available.
 BitmapMatrix.java	Initial tests	3 months ago
 Fibonacci.java
 
-* BitmapMatrix.java - Algorithm that receives as input the matrix and output a String indicating the
-number of times each (m, n) was found in the matrix.
-* Fibonacci.java - Scrap data from cases at myimmitracker (BeautifulSoup, JSON, Requests)
+* BitmapMatrix.java - Receives as input a matrix and output the number of times each number was found.
+* Fibonacci.java - Fibonacci Rescursive, Recursive with Memoization and Non-Recursive implementations 
