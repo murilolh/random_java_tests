@@ -5,8 +5,5 @@ The tests' descriptions are either on the first lines of a single file test or o
 
 Repositories for tests solved using other languages are available.
 
-BitmapMatrix.java	Initial tests	3 months ago
-Fibonacci.java
-
 * BitmapMatrix.java - Receives as input a matrix and output the number of times each number was found.
 * Fibonacci.java - Fibonacci Rescursive, Recursive with Memoization and Non-Recursive implementations 
