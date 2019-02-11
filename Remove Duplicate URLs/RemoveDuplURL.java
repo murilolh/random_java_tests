@@ -11,8 +11,8 @@ import java.util.Set;
 /**
  * Class to remove duplicated URL's of a file. An URL is equal to another if
  * their value is equal. An URL is represented in a file as a name:value pair,
- * where the name is on odds lines and the value is in the next even line.
- * A Set is used to store only unique URL's.
+ * where the name is on odds lines and the value is in the next even line. A Set
+ * is used to store only unique URL's.
  *
  */
 public class RemoveDuplURL {
@@ -31,21 +31,18 @@ public class RemoveDuplURL {
 		String nextLine;
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		Set<URL> urls = new HashSet<URL>();
+		FileOutputStream output = new FileOutputStream(args[0] + " - altered.txt");
 
 		while ((currentLine = br.readLine()) != null && (nextLine = br.readLine()) != null) {
-			urls.add(new URL(currentLine, nextLine));
+			if (urls.add(new URL(currentLine, nextLine))) {
+				output.write((currentLine + "\n").getBytes());
+				output.write((nextLine + "\n").getBytes());
+			}
 		}
 
-		FileOutputStream output = new FileOutputStream(args[0] + " - altered.txt");
-		
-		for (URL url : urls) {
-			output.write((url.getName()+"\n").getBytes());
-			output.write((url.getValue()+"\n").getBytes());
-		}
-		
 		output.flush();
 		output.close();
-		
+
 		System.out.println("File " + args[0] + " - altered.txt created succesfully!");
 
 	}
