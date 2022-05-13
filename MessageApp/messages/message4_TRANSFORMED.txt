@@ -1,0 +1,8 @@
+To:person@domain4.net,name@domain.net
+From:origin@somewhere.us
+Subject:SECURE: Saying hi
+Body:
+OK, I think this is a good plan. Please proceed.
+Make sure you don't make any  mistakes :-)
+
+See ya, &*&*&
