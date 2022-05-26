@@ -13,6 +13,7 @@ public class FibonacciCalculator {
      */
     public Long fibonacciRecursive(Integer n) {
         if (n <= 1) {
+            printIteration(n, n.longValue());
             return n.longValue();
         }
         long result = fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
@@ -68,22 +69,23 @@ public class FibonacciCalculator {
             return n.longValue();
         }
 
-        long n1 = 1; // (n - 1), initially f(1) = 1
-        long n2 = 0; // (n - 2), initially f(0) = 0
         printIteration(0, 0L);
         printIteration(1, 1L);
-        long p; // Pivot
-        for (int i = 0; i < n - 2; i++) {
-            p = n2; // Store the value of (n - 2) in the pivot
-            n2 = n1; // (n - 2) is the new (n - 1)
-            n1 = n1 + p; // the new (n - 1) is the sum of formers (n - 1) and (n - 2)
-            printIteration(i + 2, n1);
+
+        long nMinus1 = 1;
+        long nMinus2 = 0;
+        long fib = 0;
+        for (int i = 2; i <= n; i++) {
+            fib = nMinus2 + nMinus1;
+            nMinus2 = nMinus1;
+            nMinus1 = fib;
+            printIteration(i , fib);
         }
 
-        return n1 + n2;
+        return fib;
     }
 
-    private void printIteration(int n, long value){
+    private void printIteration(int n, long value) {
         System.out.println(n + " : " + value);
     }
 }
