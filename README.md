@@ -7,6 +7,8 @@ Random tests solved using Java
 * DuplicateURLApp - Remove duplicated URL's from a file
 * FibonacciApp - Fibonacci Recursive, Recursive with Memoization and Non-Recursive implementations 
 * FindRoutesApp - Solve a problem related to path routing 
+* ListApp - Solve problems related to Lists 
 * MessageApp - Solve a problem related to message transformation and parsing
 * ShiftedDiffApp - Solve a problem related to string rotation
+* TreeApp - Solve problems related to Trees
 * WeightSortApp - Solve a problem related to weighing integers
