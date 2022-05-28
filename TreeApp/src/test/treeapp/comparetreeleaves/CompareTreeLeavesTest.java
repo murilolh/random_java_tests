@@ -1,6 +1,7 @@
 package treeapp.comparetreeleaves;
 
 import org.junit.jupiter.api.Test;
+import treeapp.domain.ArrayTreeNode;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -2,6 +2,7 @@ package treeapp.leafsimilartrees;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import treeapp.domain.BinaryTreeNode;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -22,43 +23,43 @@ public class LeafSimilarTreesTest {
 
     @Test
     public void oneNullTreeIsNotSimilarToANonNullTree() {
-        TreeNode root1 = new TreeNode(1);
+        BinaryTreeNode root1 = new BinaryTreeNode(1);
         assertFalse(leafSimilarTrees.leafSimilar(root1, null));
         assertFalse(leafSimilarTrees.leafSimilar(null, root1));
     }
 
     @Test
     public void compareTreesWithOneElement() {
-        TreeNode root1 = new TreeNode(1);
-        TreeNode root2 = new TreeNode(1);
+        BinaryTreeNode root1 = new BinaryTreeNode(1);
+        BinaryTreeNode root2 = new BinaryTreeNode(1);
 
         assertTrue(leafSimilarTrees.leafSimilar(root1, root2));
     }
 
     @Test
     public void compareSimilarTreesWithMultipleElements() {
-        TreeNode root1LeftNode = new TreeNode(1);
-        TreeNode root1RightNode = new TreeNode(2);
+        BinaryTreeNode root1LeftNode = new BinaryTreeNode(1);
+        BinaryTreeNode root1RightNode = new BinaryTreeNode(2);
 
-        TreeNode root2LeftNode = new TreeNode(1);
-        TreeNode root2RightNode = new TreeNode(2);
+        BinaryTreeNode root2LeftNode = new BinaryTreeNode(1);
+        BinaryTreeNode root2RightNode = new BinaryTreeNode(2);
 
-        TreeNode root1 = new TreeNode(root1LeftNode, root1RightNode);
-        TreeNode root2 = new TreeNode(root2LeftNode, root2RightNode);
+        BinaryTreeNode root1 = new BinaryTreeNode(root1LeftNode, root1RightNode);
+        BinaryTreeNode root2 = new BinaryTreeNode(root2LeftNode, root2RightNode);
 
         assertTrue(leafSimilarTrees.leafSimilar(root1, root2));
     }
 
     @Test
     public void compareNonSimilarTreesWithMultipleElements() {
-        TreeNode root1LeftNode = new TreeNode(1);
-        TreeNode root1RightNode = new TreeNode(2);
+        BinaryTreeNode root1LeftNode = new BinaryTreeNode(1);
+        BinaryTreeNode root1RightNode = new BinaryTreeNode(2);
 
-        TreeNode root2LeftNode = new TreeNode(1);
-        TreeNode root2RightNode = new TreeNode(Integer.MAX_VALUE);
+        BinaryTreeNode root2LeftNode = new BinaryTreeNode(1);
+        BinaryTreeNode root2RightNode = new BinaryTreeNode(Integer.MAX_VALUE);
 
-        TreeNode root1 = new TreeNode(root1LeftNode, root1RightNode);
-        TreeNode root2 = new TreeNode(root2LeftNode, root2RightNode);
+        BinaryTreeNode root1 = new BinaryTreeNode(root1LeftNode, root1RightNode);
+        BinaryTreeNode root2 = new BinaryTreeNode(root2LeftNode, root2RightNode);
 
         assertFalse(leafSimilarTrees.leafSimilar(root1, root2));
     }
@@ -72,43 +73,43 @@ public class LeafSimilarTreesTest {
         G H    I J  K L     M N 
         */
 
-        TreeNode tree1NodeG = new TreeNode(1);
-        TreeNode tree1NodeH = new TreeNode(2);
-        TreeNode tree1NodeI = new TreeNode(3);
-        TreeNode tree1NodeJ = new TreeNode(4);
-        TreeNode tree1NodeK = new TreeNode(5);
-        TreeNode tree1NodeL = new TreeNode(6);
-        TreeNode tree1NodeM = new TreeNode(7);
-        TreeNode tree1NodeN = new TreeNode(8);
+        BinaryTreeNode tree1NodeG = new BinaryTreeNode(1);
+        BinaryTreeNode tree1NodeH = new BinaryTreeNode(2);
+        BinaryTreeNode tree1NodeI = new BinaryTreeNode(3);
+        BinaryTreeNode tree1NodeJ = new BinaryTreeNode(4);
+        BinaryTreeNode tree1NodeK = new BinaryTreeNode(5);
+        BinaryTreeNode tree1NodeL = new BinaryTreeNode(6);
+        BinaryTreeNode tree1NodeM = new BinaryTreeNode(7);
+        BinaryTreeNode tree1NodeN = new BinaryTreeNode(8);
 
-        TreeNode tree1NodeC = new TreeNode(tree1NodeG, tree1NodeH);
-        TreeNode tree1NodeD = new TreeNode(tree1NodeI, tree1NodeJ);
-        TreeNode tree1NodeE = new TreeNode(tree1NodeK, tree1NodeL);
-        TreeNode tree1NodeF = new TreeNode(tree1NodeM, tree1NodeN);
+        BinaryTreeNode tree1NodeC = new BinaryTreeNode(tree1NodeG, tree1NodeH);
+        BinaryTreeNode tree1NodeD = new BinaryTreeNode(tree1NodeI, tree1NodeJ);
+        BinaryTreeNode tree1NodeE = new BinaryTreeNode(tree1NodeK, tree1NodeL);
+        BinaryTreeNode tree1NodeF = new BinaryTreeNode(tree1NodeM, tree1NodeN);
 
-        TreeNode tree1NodeA = new TreeNode(tree1NodeC, tree1NodeD);
-        TreeNode tree1NodeB = new TreeNode(tree1NodeE, tree1NodeF);
+        BinaryTreeNode tree1NodeA = new BinaryTreeNode(tree1NodeC, tree1NodeD);
+        BinaryTreeNode tree1NodeB = new BinaryTreeNode(tree1NodeE, tree1NodeF);
 
-        TreeNode root1 = new TreeNode(tree1NodeA, tree1NodeB);
+        BinaryTreeNode root1 = new BinaryTreeNode(tree1NodeA, tree1NodeB);
 
-        TreeNode tree2NodeG = new TreeNode(1);
-        TreeNode tree2NodeH = new TreeNode(2);
-        TreeNode tree2NodeI = new TreeNode(3);
-        TreeNode tree2NodeJ = new TreeNode(4);
-        TreeNode tree2NodeK = new TreeNode(5);
-        TreeNode tree2NodeL = new TreeNode(6);
-        TreeNode tree2NodeM = new TreeNode(7);
-        TreeNode tree2NodeN = new TreeNode(8);
+        BinaryTreeNode tree2NodeG = new BinaryTreeNode(1);
+        BinaryTreeNode tree2NodeH = new BinaryTreeNode(2);
+        BinaryTreeNode tree2NodeI = new BinaryTreeNode(3);
+        BinaryTreeNode tree2NodeJ = new BinaryTreeNode(4);
+        BinaryTreeNode tree2NodeK = new BinaryTreeNode(5);
+        BinaryTreeNode tree2NodeL = new BinaryTreeNode(6);
+        BinaryTreeNode tree2NodeM = new BinaryTreeNode(7);
+        BinaryTreeNode tree2NodeN = new BinaryTreeNode(8);
 
-        TreeNode tree2NodeC = new TreeNode(tree2NodeG, tree2NodeH);
-        TreeNode tree2NodeD = new TreeNode(tree2NodeI, tree2NodeJ);
-        TreeNode tree2NodeE = new TreeNode(tree2NodeK, tree2NodeL);
-        TreeNode tree2NodeF = new TreeNode(tree2NodeM, tree2NodeN);
+        BinaryTreeNode tree2NodeC = new BinaryTreeNode(tree2NodeG, tree2NodeH);
+        BinaryTreeNode tree2NodeD = new BinaryTreeNode(tree2NodeI, tree2NodeJ);
+        BinaryTreeNode tree2NodeE = new BinaryTreeNode(tree2NodeK, tree2NodeL);
+        BinaryTreeNode tree2NodeF = new BinaryTreeNode(tree2NodeM, tree2NodeN);
 
-        TreeNode tree2NodeA = new TreeNode(tree2NodeC, tree2NodeD);
-        TreeNode tree2NodeB = new TreeNode(tree2NodeE, tree2NodeF);
+        BinaryTreeNode tree2NodeA = new BinaryTreeNode(tree2NodeC, tree2NodeD);
+        BinaryTreeNode tree2NodeB = new BinaryTreeNode(tree2NodeE, tree2NodeF);
 
-        TreeNode root2 = new TreeNode(tree2NodeA, tree2NodeB);
+        BinaryTreeNode root2 = new BinaryTreeNode(tree2NodeA, tree2NodeB);
 
         assertTrue(leafSimilarTrees.leafSimilar(root1, root2));
     }
@@ -122,43 +123,43 @@ public class LeafSimilarTreesTest {
         G H    I J  K L     M N
         */
 
-        TreeNode tree1NodeG = new TreeNode(1);
-        TreeNode tree1NodeH = new TreeNode(2);
-        TreeNode tree1NodeI = new TreeNode(3);
-        TreeNode tree1NodeJ = new TreeNode(4);
-        TreeNode tree1NodeK = new TreeNode(5);
-        TreeNode tree1NodeL = new TreeNode(6);
-        TreeNode tree1NodeM = new TreeNode(7);
-        TreeNode tree1NodeN = new TreeNode(8);
+        BinaryTreeNode tree1NodeG = new BinaryTreeNode(1);
+        BinaryTreeNode tree1NodeH = new BinaryTreeNode(2);
+        BinaryTreeNode tree1NodeI = new BinaryTreeNode(3);
+        BinaryTreeNode tree1NodeJ = new BinaryTreeNode(4);
+        BinaryTreeNode tree1NodeK = new BinaryTreeNode(5);
+        BinaryTreeNode tree1NodeL = new BinaryTreeNode(6);
+        BinaryTreeNode tree1NodeM = new BinaryTreeNode(7);
+        BinaryTreeNode tree1NodeN = new BinaryTreeNode(8);
 
-        TreeNode tree1NodeC = new TreeNode(tree1NodeG, tree1NodeH);
-        TreeNode tree1NodeD = new TreeNode(tree1NodeI, tree1NodeJ);
-        TreeNode tree1NodeE = new TreeNode(tree1NodeK, tree1NodeL);
-        TreeNode tree1NodeF = new TreeNode(tree1NodeM, tree1NodeN);
+        BinaryTreeNode tree1NodeC = new BinaryTreeNode(tree1NodeG, tree1NodeH);
+        BinaryTreeNode tree1NodeD = new BinaryTreeNode(tree1NodeI, tree1NodeJ);
+        BinaryTreeNode tree1NodeE = new BinaryTreeNode(tree1NodeK, tree1NodeL);
+        BinaryTreeNode tree1NodeF = new BinaryTreeNode(tree1NodeM, tree1NodeN);
 
-        TreeNode tree1NodeA = new TreeNode(tree1NodeC, tree1NodeD);
-        TreeNode tree1NodeB = new TreeNode(tree1NodeE, tree1NodeF);
+        BinaryTreeNode tree1NodeA = new BinaryTreeNode(tree1NodeC, tree1NodeD);
+        BinaryTreeNode tree1NodeB = new BinaryTreeNode(tree1NodeE, tree1NodeF);
 
-        TreeNode root1 = new TreeNode(tree1NodeA, tree1NodeB);
+        BinaryTreeNode root1 = new BinaryTreeNode(tree1NodeA, tree1NodeB);
 
-        TreeNode tree2NodeG = new TreeNode(1);
-        TreeNode tree2NodeH = new TreeNode(2);
-        TreeNode tree2NodeI = new TreeNode(3);
-        TreeNode tree2NodeJ = new TreeNode(4);
-        TreeNode tree2NodeK = new TreeNode(5);
-        TreeNode tree2NodeL = new TreeNode(6);
-        TreeNode tree2NodeM = new TreeNode(7);
-        TreeNode tree2NodeN = new TreeNode(Integer.MAX_VALUE);
+        BinaryTreeNode tree2NodeG = new BinaryTreeNode(1);
+        BinaryTreeNode tree2NodeH = new BinaryTreeNode(2);
+        BinaryTreeNode tree2NodeI = new BinaryTreeNode(3);
+        BinaryTreeNode tree2NodeJ = new BinaryTreeNode(4);
+        BinaryTreeNode tree2NodeK = new BinaryTreeNode(5);
+        BinaryTreeNode tree2NodeL = new BinaryTreeNode(6);
+        BinaryTreeNode tree2NodeM = new BinaryTreeNode(7);
+        BinaryTreeNode tree2NodeN = new BinaryTreeNode(Integer.MAX_VALUE);
 
-        TreeNode tree2NodeC = new TreeNode(tree2NodeG, tree2NodeH);
-        TreeNode tree2NodeD = new TreeNode(tree2NodeI, tree2NodeJ);
-        TreeNode tree2NodeE = new TreeNode(tree2NodeK, tree2NodeL);
-        TreeNode tree2NodeF = new TreeNode(tree2NodeM, tree2NodeN);
+        BinaryTreeNode tree2NodeC = new BinaryTreeNode(tree2NodeG, tree2NodeH);
+        BinaryTreeNode tree2NodeD = new BinaryTreeNode(tree2NodeI, tree2NodeJ);
+        BinaryTreeNode tree2NodeE = new BinaryTreeNode(tree2NodeK, tree2NodeL);
+        BinaryTreeNode tree2NodeF = new BinaryTreeNode(tree2NodeM, tree2NodeN);
 
-        TreeNode tree2NodeA = new TreeNode(tree2NodeC, tree2NodeD);
-        TreeNode tree2NodeB = new TreeNode(tree2NodeE, tree2NodeF);
+        BinaryTreeNode tree2NodeA = new BinaryTreeNode(tree2NodeC, tree2NodeD);
+        BinaryTreeNode tree2NodeB = new BinaryTreeNode(tree2NodeE, tree2NodeF);
 
-        TreeNode root2 = new TreeNode(tree2NodeA, tree2NodeB);
+        BinaryTreeNode root2 = new BinaryTreeNode(tree2NodeA, tree2NodeB);
 
         assertFalse(leafSimilarTrees.leafSimilar(root1, root2));
     }

@@ -1,5 +1,7 @@
 package treeapp.comparetreeleaves;
 
+import treeapp.domain.ArrayTreeNode;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 

@@ -1,8 +1,8 @@
-package treeapp.comparetreeleaves;
+package treeapp.domain;
 
 public class ArrayTreeNode {
-    int value;
-    ArrayTreeNode[] nodes;
+    public int value;
+    public ArrayTreeNode[] nodes;
 
     public ArrayTreeNode(int value, ArrayTreeNode[] nodes) {
         this.value = value;
