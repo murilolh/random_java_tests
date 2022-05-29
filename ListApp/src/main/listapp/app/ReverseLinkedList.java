@@ -1,7 +1,7 @@
 package listapp.app;
 
 /**
- * Given the head of a singly linked list, reverse the list, and return the reversed list. LC 206
+ * Given the head of a singly linked list, reverse the list, and return the reversed list. LC: 206
  */
 public class ReverseLinkedList {
     /*

@@ -77,8 +77,8 @@ public class ReverseLinkedListTest {
     private ListNode generateLinkedList(Object... values) {
         ListNode currentNode = null;
         ListNode nextNode = null;
-        for (int i = 0; i < values.length; i++) {
-            currentNode = new ListNode((int) values[values.length - 1 - i], nextNode);
+        for (int i = values.length - 1; i >= 0; i--) {
+            currentNode = new ListNode((int) values[i], nextNode);
             nextNode = currentNode;
         }
 

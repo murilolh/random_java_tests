@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * Leaf-Similar Trees Problem. LC 872
+ * Leaf-Similar Trees Problem. LC: 872
  */
 public class LeafSimilarTrees {
 
