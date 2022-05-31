@@ -52,7 +52,7 @@ public class WeightSort {
 
     private static void populateSortedWeightMap(Map<Integer, List<String>> sortedWeightHashMap, String intString) {
         final Integer stringWeight = sumStringDigits(intString);
-        final List<String> updatedStringList = getUpdatedStringList(sortedWeightHashMap, intString, stringWeight);
+        final List<String> updatedStringList = updateStringList(sortedWeightHashMap, intString, stringWeight);
 
         sortedWeightHashMap.put(stringWeight, updatedStringList);
     }
@@ -65,7 +65,7 @@ public class WeightSort {
         return sum;
     }
 
-    private static List<String> getUpdatedStringList(Map<Integer, List<String>> sortedWeightHashMap, String intString, Integer stringWeight) {
+    private static List<String> updateStringList(Map<Integer, List<String>> sortedWeightHashMap, String intString, Integer stringWeight) {
         final List<String> stringList = sortedWeightHashMap.getOrDefault(stringWeight, new LinkedList<>());
         stringList.add(intString);
 

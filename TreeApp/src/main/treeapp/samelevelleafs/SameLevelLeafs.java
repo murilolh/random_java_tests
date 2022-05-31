@@ -17,7 +17,7 @@ public class SameLevelLeafs {
         while (!consumerQueue.isEmpty()) {
             BinaryTreeNode node = consumerQueue.poll();
 
-            if(node.left == null && node.right == null) {
+            if (node.left == null && node.right == null) {
                 int currentLevel = getCurrentTreeLevel(currentNodeIndex);
 
                 if (!isFirstLeaf(earliestLeafLevel) && (currentLevel != earliestLeafLevel))

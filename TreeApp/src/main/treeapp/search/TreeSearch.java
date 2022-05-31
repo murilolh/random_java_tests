@@ -2,7 +2,10 @@ package treeapp.search;
 
 import treeapp.domain.BinaryTreeNode;
 
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * BFS: Level Per Level - Queue
@@ -86,7 +89,7 @@ public class TreeSearch {
         while (!recursionStack.isEmpty()) {
             BinaryTreeNode node = recursionStack.pop();
 
-            if (node.left == null && node.right == null) orderedValues.add(node.value);;
+            if (node.left == null && node.right == null) orderedValues.add(node.value);
 
             if (node.right != null) recursionStack.push(node.right);
             if (node.left != null) recursionStack.push(node.left);

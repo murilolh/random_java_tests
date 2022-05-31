@@ -25,17 +25,17 @@ public class TreeSearchTest {
 
     @Test
     void bfsOnlyLeafsTest() {
-        assertEquals(List.of(8,9,10,11,12,13,14,15), treeDFS.search(generateBFSSampleTree(), SearchType.BFS_ONLY_LEAFS));
+        assertExpectedLeafs(treeDFS.search(generateBFSSampleTree(), SearchType.BFS_ONLY_LEAFS));
     }
 
     @Test
     void dfsRecursiveOnlyLeafsTest() {
-        assertEquals(List.of(8,9,10,11,12,13,14,15), treeDFS.search(generateBFSSampleTree(), SearchType.DFS_ONLY_LEAFS_RECURSIVE));
+        assertExpectedLeafs(treeDFS.search(generateBFSSampleTree(), SearchType.DFS_ONLY_LEAFS_RECURSIVE));
     }
 
     @Test
     void dfsIterativeOnlyLeafsTest() {
-        assertEquals(List.of(8,9,10,11,12,13,14,15), treeDFS.search(generateBFSSampleTree(), SearchType.DFS_ONLY_LEAFS_ITERATIVE));
+        assertExpectedLeafs(treeDFS.search(generateBFSSampleTree(), SearchType.DFS_ONLY_LEAFS_ITERATIVE));
     }
 
     @Test
@@ -147,5 +147,13 @@ public class TreeSearchTest {
 
     private List<Integer> generateExpectedList() {
         return List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+    }
+
+    private void assertExpectedLeafs(List<Integer> orderedValues) {
+        assertEquals(generateExpectedLeafList(), orderedValues);
+    }
+
+    private List<Integer> generateExpectedLeafList() {
+        return List.of(8,9,10,11,12,13,14,15);
     }
 }
