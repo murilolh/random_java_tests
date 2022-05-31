@@ -10,6 +10,7 @@ Random tests solved using Java
 * FindRoutesApp - Solve a problem related to path routing.
 * ListApp - Solve problems related to Lists.
 * MessageApp - Solve a problem related to message transformation and parsing.
+* PascalTriangleApp - Solve problems related to Pascal Triangles.
 * ShiftedDiffApp - Solve a problem related to string rotation.
 * TreeApp - Solve problems related to Trees.
 * WeightSortApp - Solve a problem related to weighing integers.
