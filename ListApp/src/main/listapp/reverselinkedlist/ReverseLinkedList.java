@@ -1,4 +1,6 @@
-package listapp.app;
+package listapp.reverselinkedlist;
+
+import listapp.domain.ListNode;
 
 /**
  * Given the head of a singly linked list, reverse the list, and return the reversed list. LC: 206
