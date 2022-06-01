@@ -43,7 +43,6 @@ public class AnagramServiceTest {
                 Arguments.of("adsgahtstejdtjhadgjahdstestasdkjgadhjkghttsejadk", "etst", List.of(6, 23, 40)),
                 Arguments.of("akhfasksbcxnbzCEARAxwuyfgsdiicearajkasdn,mbhjkcn\n\t2348\n743jhcnmbzxch1276asbcalakacera327fd &&^&*%&*bsdfhg\nsdfsadjhsdeaacr32897324sdfnasdfjhlskad",
                         "ceara", List.of(29, 80, 116))
-
         );
     }
 

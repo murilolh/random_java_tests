@@ -2,7 +2,8 @@
 Random tests solved using Java.
 
 * ArrayApp - Solve problems related to Arrays.
-  * TwoSum - Solve the TwoSum problem, sorted and unsorted 
+  * TwoSum - Solve the TwoSum problem, sorted and unsorted.
+  * ProductArrayExceptSelf - Solve the Product Array Except Self problem. 
 * BitmapMatrixApp - Receives as input a matrix and output the number of times each number was found.
 * BlankApp - Blank App to start new apps.
 * BookApp - Solve a problem related to book information presentation.
@@ -15,6 +16,7 @@ Random tests solved using Java.
 * PascalTriangleApp - Solve problems related to Pascal Triangles.
 * StringApp- Solve problems related to Strings.
   * Anagram - Solve problems related to anagrams.
+  * LongestWord - Solve the Longest World in Dictionary problem.
   * Palindrome - Solve problems related to palindromes.
   * ReverseWords - Solve problems related to reversing words in strings.
   * ShiftedDiff - Solve a problem related to string rotation.
