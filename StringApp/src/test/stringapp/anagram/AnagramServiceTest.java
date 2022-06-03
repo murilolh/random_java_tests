@@ -41,6 +41,7 @@ public class AnagramServiceTest {
                 Arguments.of("abbaabbaabba", "ab", List.of(0, 2, 4, 6, 8, 10)),
                 Arguments.of("ababababababababababababab", "ab", List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)),
                 Arguments.of("adsgahtstejdtjhadgjahdstestasdkjgadhjkghttsejadk", "etst", List.of(6, 23, 40)),
+                Arguments.of("0tt1e2s3test4567test89test", "etst", List.of(8, 16, 22)),
                 Arguments.of("akhfasksbcxnbzCEARAxwuyfgsdiicearajkasdn,mbhjkcn\n\t2348\n743jhcnmbzxch1276asbcalakacera327fd &&^&*%&*bsdfhg\nsdfsadjhsdeaacr32897324sdfnasdfjhlskad",
                         "ceara", List.of(29, 80, 116))
         );

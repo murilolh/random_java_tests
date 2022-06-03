@@ -20,9 +20,9 @@ public class AnagramService {
             return false;
 
         int[] alphabet = new int[26];
-        for (int i = 0; i < s1.length(); i++) {
-            alphabet[s1.charAt(i) - 'a']++;
-            alphabet[s2.charAt(i) - 'a']--;
+        for (char c : s1.toCharArray()) {
+            alphabet[c - 'a']++;
+            alphabet[c - 'a']--;
         }
 
         for (int i : alphabet)
@@ -38,9 +38,9 @@ public class AnagramService {
             return false;
 
         final Map<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < s1.length(); i++) {
-            updateAnagramMap(s1.charAt(i), map, true);
-            updateAnagramMap(s2.charAt(i), map, false);
+        for (char c : s1.toCharArray()) {
+            updateAnagramMap(c, map, true);
+            updateAnagramMap(c, map, false);
         }
 
         for (Character c : map.keySet())
@@ -51,8 +51,8 @@ public class AnagramService {
     }
 
     private static void updateAnagramMap(Character c, Map<Character, Integer> m, boolean isIncreasing) {
-        int i = isIncreasing ? 1 : -1;
-        m.put(c, m.getOrDefault(c, 0) + i);
+        int increment = isIncreasing ? 1 : -1;
+        m.put(c, m.getOrDefault(c, 0) + increment);
     }
 
     /**
@@ -67,40 +67,45 @@ public class AnagramService {
         final Map<Character, Integer> map = getStringCharacterMap(s2);
 
         int counter = map.size();
-        int start = 0;
-        int end = 0;
+        int windowStart = 0;
+        int windowEnd = 0;
 
-        while (end < s1.length()) {
-            char c = s1.charAt(end);
-            if (map.containsKey(c)) {
-                map.put(c, map.get(c) - 1);
-                if (map.get(c) == 0)
+        while (windowEnd < s1.length()) {
+            char endChar = s1.charAt(windowEnd);
+            if (map.containsKey(endChar)) {
+                map.put(endChar, map.get(endChar) - 1);
+                if (map.get(endChar) == 0)
                     counter--;
             }
-            end++;
+            windowEnd++;
 
             while (counter == 0) {
-                char tempChar = s1.charAt(start);
+                addStringIfWindowIsAnagram(result, windowStart, windowEnd, s2.length());
 
-                if (map.containsKey(tempChar)) {
-                    map.put(tempChar, map.get(tempChar) + 1);
-                    if (map.get(tempChar) > 0)
+                char startChar = s1.charAt(windowStart);
+                if (map.containsKey(startChar)) {
+                    map.put(startChar, map.get(startChar) + 1);
+                    if (map.get(startChar) > 0)
                         counter++;
                 }
-
-                if (end - start == s2.length())
-                    result.add(start);
-
-                start++;
+                windowStart++;
             }
         }
 
         return result;
     }
 
-    private static Map<Character, Integer> getStringCharacterMap(String s2) {
+    /**
+     * If counter = 0, there's an anagram in the window (windowEnd - windowStart). If the window size is equal to s2, the window is the anagram
+     */
+    private static void addStringIfWindowIsAnagram(List<Integer> result, int windowStart, int windowEnd, int anagramSize) {
+        if (windowEnd - windowStart == anagramSize)
+            result.add(windowStart);
+    }
+
+    private static Map<Character, Integer> getStringCharacterMap(String string) {
         Map<Character, Integer> map = new HashMap<>();
-        for (char c : s2.toCharArray())
+        for (char c : string.toCharArray())
             map.put(c, map.getOrDefault(c, 0) + 1);
         return map;
     }
