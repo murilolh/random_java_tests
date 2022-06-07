@@ -1,13 +1,11 @@
 package stringapp.anagram;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Valid Anagram LC: 242
  * Find All Anagrams in a String LC: 438
+ * Group Anagrams LC: 49
  */
 public class AnagramService {
 
@@ -95,9 +93,7 @@ public class AnagramService {
         return result;
     }
 
-    /**
-     * If counter = 0, there's an anagram in the window (windowEnd - windowStart). If the window size is equal to s2, the window is the anagram
-     */
+    // If counter = 0, there's an anagram in the window (windowEnd - windowStart). If the window size is equal to s2, the window is the anagram
     private static void addStringIfWindowIsAnagram(List<Integer> result, int windowStart, int windowEnd, int anagramSize) {
         if (windowEnd - windowStart == anagramSize)
             result.add(windowStart);
@@ -108,5 +104,32 @@ public class AnagramService {
         for (char c : string.toCharArray())
             map.put(c, map.getOrDefault(c, 0) + 1);
         return map;
+    }
+
+    /**
+     * Given an array of strings, group the anagrams together. You can return the answer in any order.
+     */
+    public static List<List<String>> groupAnagrams(String[] strings) {
+        final Map<String, List<String>> dictionary = new HashMap<>();
+
+        for (String string : strings)
+            updateDictionary(dictionary, string);
+
+        return dictionary
+                .values()
+                .stream()
+                .toList();
+    }
+
+    private static void updateDictionary(Map<String, List<String>> dictionary, String string) {
+        char[] alphabet = new char[26];
+        for (int i = 0; i < string.length(); i++)
+            alphabet[string.charAt(i) - 'a']++;
+
+        String stringHash = new String(alphabet);
+        List<String> currentAnagramList = dictionary.getOrDefault(stringHash, new LinkedList<>());
+        currentAnagramList.add(string);
+
+        dictionary.put(stringHash, currentAnagramList);
     }
 }

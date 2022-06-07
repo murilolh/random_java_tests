@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AnagramServiceTest {
     static Stream<Arguments> getIsAnagramArguments() {
@@ -51,5 +52,28 @@ public class AnagramServiceTest {
     @MethodSource("getFindAnagramsArguments")
     void findAnagramsTest(String s1, String s2, List<Integer> result) {
         assertEquals(result, AnagramService.findAnagrams(s1, s2));
+    }
+
+    static Stream<Arguments> getGroupAnagramsArguments() {
+        return Stream.of(
+                Arguments.of(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}, List.of(List.of("bat"), List.of("nat", "tan"), List.of("ate","eat","tea"))),
+                Arguments.of(new String[]{""}, List.of(List.of(""))),
+                Arguments.of(new String[]{"a"}, List.of(List.of("a")))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("getGroupAnagramsArguments")
+    void groupAnagramsTest(String[] strings, List<List<String>> expectedResult) {
+        List<List<String>> result = AnagramService.groupAnagrams(strings);
+        for (List<String> resultList : result)
+            assertTrue(assertThatListExists(expectedResult, resultList));
+    }
+
+    private boolean assertThatListExists(List<List<String>> expectedResult, List<String> resultList) {
+        for (List<String> expectedResultList: expectedResult)
+            if (expectedResultList.containsAll(resultList))
+                return true;
+        return false;
     }
 }

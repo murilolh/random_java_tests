@@ -2,8 +2,10 @@
 Random tests solved using Java.
 
 * ArrayApp - Solve problems related to Arrays.
-  * TwoSum - Solve the TwoSum problem, sorted and unsorted.
-  * ProductArrayExceptSelf - Solve the Product Array Except Self problem. 
+  * ContainsDuplicate - Solve the Contains Duplicate problem.
+  * ProductArrayExceptSelf - Solve the Product Array Except Self problem.
+  * TopFrequentElements - Solve the Top K Frequent Elements problem.   
+  * TwoSum - Solve the TwoSum problem, sorted and unsorted.   
 * BitmapMatrixApp - Receives as input a matrix and output the number of times each number was found.
 * BlankApp - Blank App to start new apps.
 * BookApp - Solve a problem related to book information presentation.
