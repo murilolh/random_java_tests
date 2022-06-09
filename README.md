@@ -18,6 +18,7 @@ Random tests solved using Java.
 * PascalTriangleApp - Solve problems related to Pascal Triangles.
 * StringApp- Solve problems related to Strings.
   * Anagram - Solve problems related to anagrams.
+  * EncodeDecode - Solve a problem related to String encoding/decoding.
   * LongestWord - Solve the Longest World in Dictionary problem.
   * Palindrome - Solve problems related to palindromes.
   * ReverseWords - Solve problems related to reversing words in strings.

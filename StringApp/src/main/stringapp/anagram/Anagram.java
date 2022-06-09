@@ -7,7 +7,7 @@ import java.util.*;
  * Find All Anagrams in a String LC: 438
  * Group Anagrams LC: 49
  */
-public class AnagramService {
+public class Anagram {
 
     /**
      * Given two strings, return true if they are anagrams, and false otherwise.
@@ -28,7 +28,6 @@ public class AnagramService {
                 return false;
 
         return true;
-
     }
 
     public static boolean isAnagramMap(String s1, String s2) {

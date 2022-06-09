@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AnagramServiceTest {
+public class AnagramTest {
     static Stream<Arguments> getIsAnagramArguments() {
         return Stream.of(
                 Arguments.of("", "", true),
@@ -25,13 +25,13 @@ public class AnagramServiceTest {
     @ParameterizedTest
     @MethodSource("getIsAnagramArguments")
     void isAnagramArrayTest(String s1, String s2, boolean result) {
-        assertEquals(result, AnagramService.isAnagramArray(s1, s2));
+        assertEquals(result, Anagram.isAnagramArray(s1, s2));
     }
 
     @ParameterizedTest
     @MethodSource("getIsAnagramArguments")
     void isAnagramMapTest(String s1, String s2, boolean result) {
-        assertEquals(result, AnagramService.isAnagramMap(s1, s2));
+        assertEquals(result, Anagram.isAnagramMap(s1, s2));
     }
 
     static Stream<Arguments> getFindAnagramsArguments() {
@@ -51,7 +51,7 @@ public class AnagramServiceTest {
     @ParameterizedTest
     @MethodSource("getFindAnagramsArguments")
     void findAnagramsTest(String s1, String s2, List<Integer> result) {
-        assertEquals(result, AnagramService.findAnagrams(s1, s2));
+        assertEquals(result, Anagram.findAnagrams(s1, s2));
     }
 
     static Stream<Arguments> getGroupAnagramsArguments() {
@@ -65,7 +65,7 @@ public class AnagramServiceTest {
     @ParameterizedTest
     @MethodSource("getGroupAnagramsArguments")
     void groupAnagramsTest(String[] strings, List<List<String>> expectedResult) {
-        List<List<String>> result = AnagramService.groupAnagrams(strings);
+        List<List<String>> result = Anagram.groupAnagrams(strings);
         for (List<String> resultList : result)
             assertTrue(assertThatListExists(expectedResult, resultList));
     }
