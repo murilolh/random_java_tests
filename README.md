@@ -3,6 +3,7 @@ Random tests solved using Java.
 
 * ArrayApp - Solve problems related to Arrays.
   * ContainsDuplicate - Solve the Contains Duplicate problem.
+  * LongestConsecutiveSequence - Solve the Longest Consecutive Sequence problem.
   * ProductArrayExceptSelf - Solve the Product Array Except Self problem.
   * TopFrequentElements - Solve the Top K Frequent Elements problem.   
   * TwoSum - Solve the TwoSum problem, sorted and unsorted.   
