@@ -1,31 +1,34 @@
 # random_tests_java
 Random tests solved using Java.
 
-* ArrayApp - Solve problems related to Arrays.
-  * ContainsDuplicate - Solve the Contains Duplicate problem.
-  * LongestConsecutiveSequence - Solve the Longest Consecutive Sequence problem.
-  * ProductArrayExceptSelf - Solve the Product Array Except Self problem.
-  * TopFrequentElements - Solve the Top K Frequent Elements problem.   
-  * TwoSum - Solve the TwoSum problem, sorted and unsorted.   
+* ArrayApp - Problems related to Arrays.
+  * ContainerWithMostWater - Container With Most Water problem.
+  * ContainsDuplicate - Contains Duplicate problem.
+  * LongestConsecutiveSequence - Longest Consecutive Sequence problem.
+  * ProductArrayExceptSelf - Product Array Except Self problem.
+  * ThreeSum - ThreeSum problem.
+  * TopFrequentElements - Top K Frequent Elements problem.   
+  * TwoSum - TwoSum problem, sorted and unsorted.  
 * BitmapMatrixApp - Receives as input a matrix and output the number of times each number was found.
 * BlankApp - Blank App to start new apps.
 * BookApp - Solve a problem related to book information presentation.
 * DuplicateURLApp - Remove duplicated URLs from a file.
 * FibonacciApp - Fibonacci Recursive, Recursive with Memoization and Non-Recursive implementations. 
 * FindRoutesApp - Solve a problem related to path routing.
-* ListApp - Solve problems related to Lists.
-  * ReverseLinkedList - Solve the reverse linked list problem.
+* ListApp - Problems related to Lists.
+  * ReverseLinkedList - Reverse linked list problem.
 * MessageApp - Solve a problem related to message transformation and parsing.
-* PascalTriangleApp - Solve problems related to Pascal Triangles.
-* StringApp- Solve problems related to Strings.
-  * Anagram - Solve problems related to anagrams.
+* PascalTriangleApp - Problems related to Pascal Triangles.
+* StringApp- Problems related to Strings.
+  * Anagram - Problems related to Anagrams.
   * EncodeDecode - Solve a problem related to String encoding/decoding.
-  * LongestWord - Solve the Longest World in Dictionary problem.
-  * Palindrome - Solve problems related to palindromes.
-  * ReverseWords - Solve problems related to reversing words in strings.
-  * ShiftedDiff - Solve a problem related to string rotation.
+  * LongestSubStringNoRepeat - Longest SubString Without Repeating Characters problem.
+  * LongestWord - Longest World in Dictionary problem.
+  * Palindrome - Problems related to Palindromes.
+  * ReverseWords - Problems related to reversing words in Strings.
+  * ShiftedDiff - Solve a problem related to String rotation.
   * WeightSort - Solve a problem related to weighing integers.
-* TreeApp - Solve problems related to Trees.
+* TreeApp - Problems related to Trees.
   * CompareTreeLeaves - Solve the problem of comparing the leafs of 2 trees (Arrays).
   * DeepClone - Solve the problem of deep cloning a binary tree.
   * SameLevelLeafs - Solve the problem of checking if all tree leafs are at the same level.
