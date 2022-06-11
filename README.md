@@ -22,8 +22,10 @@ Random tests solved using Java.
 * StringApp- Problems related to Strings.
   * Anagram - Problems related to Anagrams.
   * EncodeDecode - Solve a problem related to String encoding/decoding.
-  * LongestSubStringNoRepeat - Longest SubString Without Repeating Characters problem.
+  * LongestRepeatingCharacterReplacement - Longest Repeating Character Replacement problem.
+  * LongestSubstringNoRepeat - Longest Substring Without Repeating Characters problem.
   * LongestWord - Longest World in Dictionary problem.
+  * MinimumWindowSubstring - Minimum Window Substring problem.
   * Palindrome - Problems related to Palindromes.
   * ReverseWords - Problems related to reversing words in Strings.
   * ShiftedDiff - Solve a problem related to String rotation.
