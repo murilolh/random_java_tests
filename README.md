@@ -29,6 +29,7 @@ Random tests solved using Java.
   * Palindrome - Problems related to Palindromes.
   * ReverseWords - Problems related to reversing words in Strings.
   * ShiftedDiff - Solve a problem related to String rotation.
+  * ValidParentheses - Valid Parentheses Problem
   * WeightSort - Solve a problem related to weighing integers.
 * TreeApp - Problems related to Trees.
   * CompareTreeLeaves - Solve the problem of comparing the leafs of 2 trees (Arrays).
