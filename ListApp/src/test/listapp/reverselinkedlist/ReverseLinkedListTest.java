@@ -1,6 +1,7 @@
 package listapp.reverselinkedlist;
 
 import listapp.domain.ListNode;
+import listapp.utils.ListTestUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -18,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class ReverseLinkedListTest {
 
     private ReverseLinkedList reverseLinkedList;
+    private final ListTestUtils utils = new ListTestUtils();
 
     @BeforeEach
     void setUp() {
@@ -47,55 +49,36 @@ public class ReverseLinkedListTest {
     static Stream<Arguments> reverseListArguments() {
         return Stream.of(
                 Arguments.of(Collections.emptyList()),
-                Arguments.of(Arrays.asList(1,2,3,4)),
-                Arguments.of(Arrays.asList(1,2,3,4,5,6,7)),
-                Arguments.of(Arrays.asList(Integer.MIN_VALUE,2,3,4,5,6,Integer.MAX_VALUE))
+                Arguments.of(Arrays.asList(1, 2, 3, 4)),
+                Arguments.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7)),
+                Arguments.of(Arrays.asList(Integer.MIN_VALUE, 2, 3, 4, 5, 6, Integer.MAX_VALUE))
         );
     }
 
     @ParameterizedTest
     @MethodSource("reverseListArguments")
     public void reverseListsWithMultipleElements(List<Integer> elementList) {
-        ListNode listToBeReversed = generateLinkedList(elementList.toArray());
+        ListNode listToBeReversed = utils.generateLinkedList(elementList);
         ListNode expectedReversedList = generateReversedList(elementList);
 
         ListNode reversedList = reverseLinkedList.reverseList(listToBeReversed);
 
-        assertListNodeAreEqual(expectedReversedList, reversedList);
+        utils.assertListNodesAreEqual(expectedReversedList, reversedList);
     }
 
     @ParameterizedTest
     @MethodSource("reverseListArguments")
     public void reverseListsWithMultipleElementsRecursive(List<Integer> elementList) {
-        ListNode listToBeReversed = generateLinkedList(elementList.toArray());
+        ListNode listToBeReversed = utils.generateLinkedList(elementList);
         ListNode expectedReversedList = generateReversedList(elementList);
 
         ListNode reversedListRecursive = reverseLinkedList.reverseListRecursive(listToBeReversed);
 
-        assertListNodeAreEqual(expectedReversedList, reversedListRecursive);
-    }
-
-    private ListNode generateLinkedList(Object... values) {
-        ListNode currentNode = null;
-        ListNode nextNode = null;
-        for (int i = values.length - 1; i >= 0; i--) {
-            currentNode = new ListNode((int) values[i], nextNode);
-            nextNode = currentNode;
-        }
-
-        return currentNode;
+        utils.assertListNodesAreEqual(expectedReversedList, reversedListRecursive);
     }
 
     private ListNode generateReversedList(List<Integer> elementList) {
         Collections.reverse(elementList);
-        return generateLinkedList(elementList.toArray());
-    }
-
-    private void assertListNodeAreEqual(ListNode expectedReversedList, ListNode reversedList) {
-        while (expectedReversedList != null && reversedList != null) {
-            assertEquals(expectedReversedList.val, reversedList.val);
-            expectedReversedList = expectedReversedList.next;
-            reversedList = reversedList.next;
-        }
+        return utils.generateLinkedList(elementList);
     }
 }

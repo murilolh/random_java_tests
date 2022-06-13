@@ -6,6 +6,7 @@ Random tests solved using Java.
   * ContainsDuplicate - Contains Duplicate problem.
   * LongestConsecutiveSequence - Longest Consecutive Sequence problem.
   * ProductArrayExceptSelf - Product Array Except Self problem.
+  * SearchRotatedSorted - Problems related to searching in sorted rotated arrays.
   * ThreeSum - ThreeSum problem.
   * TopFrequentElements - Top K Frequent Elements problem.   
   * TwoSum - TwoSum problem, sorted and unsorted.  
@@ -16,7 +17,8 @@ Random tests solved using Java.
 * FibonacciApp - Fibonacci Recursive, Recursive with Memoization and Non-Recursive implementations. 
 * FindRoutesApp - Solve a problem related to path routing.
 * ListApp - Problems related to Lists.
-  * ReverseLinkedList - Reverse linked list problem.
+  * MergeSortedLinkedLists - Merge Sorted Linked Lists problem.
+  * ReverseLinkedList - Reverse Linked List problem.
 * MessageApp - Solve a problem related to message transformation and parsing.
 * PascalTriangleApp - Problems related to Pascal Triangles.
 * StringApp- Problems related to Strings.
